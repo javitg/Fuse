@@ -8,17 +8,17 @@
 			<FileSource ux:Property="backImageNameText" />
 
 			<Panel ClipToBounds="true"  >
-				<Image Alignment="Top" ux:Name="_backImage" File="{Property this.backImageName}" ContentAlignment="Center" Layer="Background" />
+				<Image Alignment="Top" Width="130%" ux:Name="_backImage" File="{Property this.backImageName}" ContentAlignment="Center" Layer="Background" />
 					
 				<ScrollView ux:Name="_scrollViewVertical" >		
-			    	<Panel Margin="0,200,0,-200"  >
+			    	<Panel Margin="0,300,0,-300"  >
 			    		<Image File="assets/Polygon.png"  Width="100%" ContentAlignment="Top" Layer="Background"/>
 			    		<Panel Background="#fff" Margin="0,60,0,0">
 			    			<Image File="{Property this.backImageNameText}" Width="354" ContentAlignment="TopCenter" Margin="0,0,0,0"/>
 			    		</Panel>
 			    	</Panel>	
 
-			    	<ScrollingAnimation From="100" To="-200">
+			    	<ScrollingAnimation From="100" To="-300">
 			    		<Scale  Factor="1.9"   RelativeTo="SizeChange" RelativeNode="_scrollViewVertical" Target="_backImage"/>
 			    		
 			    	</ScrollingAnimation>

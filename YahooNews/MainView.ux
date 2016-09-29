@@ -1,0 +1,45 @@
+<App Background="#000">
+		<PageControl ux:Class="NewsPageControl">
+			<NavigationMotion Overflow="Elastic" />
+		</PageControl>	
+
+		<Page ux:Class="NewsPage" Width="99%" Background="#fff"  >
+			<FileSource ux:Property="backImageName" />
+			<FileSource ux:Property="backImageNameText" />
+
+			<Panel ClipToBounds="true"  >
+				<Image Alignment="Top" ux:Name="_backImage" File="{Property this.backImageName}" ContentAlignment="Center" Layer="Background" />
+					
+				<ScrollView ux:Name="_scrollViewVertical" >		
+			    	<Panel Margin="0,200,0,-200"  >
+			    		<Image File="assets/Polygon.png"  Width="100%" ContentAlignment="Top" Layer="Background"/>
+			    		<Panel Background="#fff" Margin="0,60,0,0">
+			    			<Image File="{Property this.backImageNameText}" Width="354" ContentAlignment="TopCenter" Margin="0,0,0,0"/>
+			    		</Panel>
+			    	</Panel>	
+
+			    	<ScrollingAnimation From="100" To="-200">
+			    		<Scale  Factor="1.9"   RelativeTo="SizeChange" RelativeNode="_scrollViewVertical" Target="_backImage"/>
+			    		
+			    	</ScrollingAnimation>
+				</ScrollView>
+			</Panel>	
+
+			<EnteringAnimation>	        	
+	        	<Move X="0.8" RelativeTo="Size" Target="_backImage"  />
+	    	</EnteringAnimation>
+	   		<ExitingAnimation>
+	        	<Move X="-0.7" RelativeTo="Size" Target="_backImage" />
+	    	</ExitingAnimation>
+			
+		</Page>
+	
+	<NewsPageControl Width="101%" ux:Name="main" >
+		<NewsPage  backImageName="assets/backImage1.png" backImageNameText="assets/imageText1.png" >
+		</NewsPage>
+		<NewsPage  backImageName="assets/backImage3.png" backImageNameText="assets/imageText2.png"    >
+		</NewsPage>
+		<NewsPage  backImageName="assets/backImage2.png" backImageNameText="assets/imageText3.png"   >
+		</NewsPage>
+	</NewsPageControl>
+</App>
